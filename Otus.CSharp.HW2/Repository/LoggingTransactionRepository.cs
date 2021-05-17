@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Otus.CSharp.HW2.Concrete
+namespace Otus.CSharp.HW2.Repository
 {
     public class LoggingTransactionRepository : ITransactionRepository // декоратор
     {

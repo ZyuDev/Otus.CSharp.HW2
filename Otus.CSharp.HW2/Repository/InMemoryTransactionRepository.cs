@@ -1,9 +1,11 @@
 ﻿using Otus.CSharp.HW2.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
 
-namespace Otus.CSharp.HW2.Concrete
+namespace Otus.CSharp.HW2.Repository
 {
     public class InMemoryTransactionRepository : ITransactionRepository
     {

@@ -21,6 +21,6 @@ namespace Otus.CSharp.HW2.Concrete
             Message = message;
         }
 
-        public override string ToString() => $"Перевод {Amount} на имя {Destination} с сообщением {Message}";
+        public override string ToString() => $"Перевод {Amount.Amount} {Amount.CurrencyCode} {Destination} {Message}";
     }
 }

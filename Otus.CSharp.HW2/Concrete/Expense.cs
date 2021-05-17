@@ -20,6 +20,6 @@ namespace Otus.CSharp.HW2.Concrete
         public string Category { get; }
         public string Destination { get; }
 
-        public override string ToString() => $"Трата {Amount} в {Destination} по категории {Category}";
+        public override string ToString() => $"Трата {Amount.Amount} {Amount.CurrencyCode} {Destination} {Category}";
     }
 }

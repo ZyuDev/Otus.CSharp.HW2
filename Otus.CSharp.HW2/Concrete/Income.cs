@@ -18,6 +18,6 @@ namespace Otus.CSharp.HW2.Concrete
             Source = source;
         }
 
-        public override string ToString() => $"Зачисление {Amount} от {Source}";
+        public override string ToString() => $"Зачисление {Amount.Amount} {Amount.CurrencyCode} {Source}";
     }
 }
