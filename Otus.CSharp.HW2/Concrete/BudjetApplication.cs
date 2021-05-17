@@ -21,8 +21,17 @@ namespace Otus.CSharp.HW2.Concrete
 
         public void AddTransaction(string input)
         {
-            var transaction = _transactionParser.Parse(input);
-            _transactionRepository.AddTransaction(transaction);
+
+            try
+            {
+                var transaction = _transactionParser.Parse(input);
+                _transactionRepository.AddTransaction(transaction);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Wrong input: {e.Message}");
+            }
+
         }
 
         public void OutputTransactions()
@@ -43,7 +52,19 @@ namespace Otus.CSharp.HW2.Concrete
 
             var totalBalanceAmount = amounts.Aggregate(totalCurrencyAmount, (t, a) => t += a);
 
-            Console.WriteLine($"Balance: {totalBalanceAmount} {currencyCode}");
+            Console.WriteLine($"Balance: {totalBalanceAmount}");
+        }
+
+        public void OutputBalanceInMainCurrencies()
+        {
+            Console.WriteLine("======================");
+
+            OutputBalanceInCurrency("EUR");
+            OutputBalanceInCurrency("USD");
+            OutputBalanceInCurrency("RUB");
+
+            Console.WriteLine("======================");
+
         }
     }
 }

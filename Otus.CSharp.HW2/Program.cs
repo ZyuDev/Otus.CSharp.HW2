@@ -29,11 +29,45 @@ namespace Otus.CSharp.HW2
 
             budgetApp.OutputTransactions();
 
-            budgetApp.OutputBalanceInCurrency("USD");
-            budgetApp.OutputBalanceInCurrency("EUR");
-            budgetApp.OutputBalanceInCurrency("RUB");
+            budgetApp.OutputBalanceInMainCurrencies();
 
-            Console.Read();
+            var flagContinue = true;
+
+            Console.WriteLine("");
+
+            while (flagContinue)
+            {
+                Console.WriteLine("Press 1 - to input new transaction, 2 - print transactions, 0 - to exit");
+                var key = Console.ReadKey();
+                Console.WriteLine();
+
+                if (key.KeyChar == '0')
+                {
+                    flagContinue = false;
+                }
+                else if (key.KeyChar == '1')
+                {
+                    Console.WriteLine("Input new transaction:");
+                    var input = Console.ReadLine();
+
+                    budgetApp.AddTransaction(input);
+                    budgetApp.OutputBalanceInMainCurrencies();
+
+                }
+                else if (key.KeyChar == '2')
+                {
+                    Console.WriteLine("Saved transactions:");
+                    Console.WriteLine("======================");
+
+                    budgetApp.OutputTransactions();
+                    budgetApp.OutputBalanceInMainCurrencies();
+
+                }
+            }
+
+
         }
+
+
     }
 }
