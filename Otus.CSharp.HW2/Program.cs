@@ -22,14 +22,14 @@ namespace Otus.CSharp.HW2
             budgetApp.AddTransaction("Трата -40 EUR Продукты Пятерочка");
             budgetApp.AddTransaction("Трата -200 EUR Бензин IRBIS");
             budgetApp.AddTransaction("Трата -50 EUR Кафе Шоколадница");
+            budgetApp.AddTransaction("Зачисление 5000 EUR Зарплата");
+            budgetApp.AddTransaction("Перевод 12.3 EUR Вася Долг");
 
             budgetApp.OutputTransactions();
 
             budgetApp.OutputBalanceInCurrency("USD");
             budgetApp.OutputBalanceInCurrency("EUR");
             budgetApp.OutputBalanceInCurrency("RUB");
-
-
 
             Console.Read();
         }
